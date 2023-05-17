@@ -40,7 +40,7 @@ const Banner = () => {
       grabCursor
       loop={true}
       autoplay={{
-        disableOnInteraction: true,
+        disableOnInteraction: false,
         delay: 6000,
       }}
       navigation={{
