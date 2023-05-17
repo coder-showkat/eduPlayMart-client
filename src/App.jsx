@@ -3,7 +3,7 @@ import Main from "./Layouts/Main";
 import AllToys from "./pages/AllToys";
 import Blogs from "./pages/Blogs";
 import ErrorPage from "./pages/ErrorPage";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AddAToy from "./pages/privateRoutes/AddAToy";

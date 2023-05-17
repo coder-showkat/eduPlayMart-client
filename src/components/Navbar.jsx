@@ -4,7 +4,7 @@ import logo from "../assets/images/logo.webp";
 
 const Navbar = () => {
   return (
-    <div className="container navbar justify-between">
+    <div className="container navbar justify-between py-4">
       <Link to="/" className="shrink-0">
         <img src={logo} alt="logo" className="w-40" />
       </Link>
