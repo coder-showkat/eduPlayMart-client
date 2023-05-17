@@ -3,5 +3,17 @@
 @tailwind utilities;
 
 body {
-  @apply text-neutral;
+  @apply text-neutral font-lato;
+}
+
+.container {
+  @apply mx-auto px-5 md:px-8 xl:px-12;
+}
+
+.menu-horizontal a {
+  @apply hover:bg-inherit font-semibold hover:text-primary duration-300;
+}
+
+.menu-horizontal .active {
+  @apply bg-inherit text-primary;
 }

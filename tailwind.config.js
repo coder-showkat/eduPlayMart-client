@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      "lato": ["Lato", "sans-serif"],
+      "nunito": ["Nunito", "sans-serif"]
+    }
   },
   plugins: [daisyui],
   daisyui: {
