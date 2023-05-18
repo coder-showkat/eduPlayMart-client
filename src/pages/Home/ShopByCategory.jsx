@@ -12,10 +12,12 @@ const ShopByCategory = () => {
         Shop by Category
       </h1>
       <Tabs>
-        <TabList>
-          <Tab>Toys & Games</Tab>
-          <Tab>Puzzle Toys</Tab>
-          <Tab>Development Toys & Kits</Tab>
+        <TabList className="tabs">
+          <Tab className="text-lg tab tab-bordered">Toys & Games</Tab>
+          <Tab className="text-lg tab tab-bordered">Puzzle Toys</Tab>
+          <Tab className="text-lg tab tab-bordered">
+            Development Toys & Kits
+          </Tab>
         </TabList>
 
         <TabPanel>

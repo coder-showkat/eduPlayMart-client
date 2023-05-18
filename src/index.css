@@ -22,10 +22,18 @@ body {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 60px -30px;
 }
 
-.react-tabs__tab-list {
-  @apply text-center font-semibold;
+.tabs {
+  @apply w-fit mx-auto font-semibold;
 }
 
-/* .react-tabs__tab--selected {
-  @apply text-primary;
-} */
+.react-tabs__tab--selected {
+  @apply tab-active focus:outline-0;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-primary opacity-80 w-4 h-4;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-secondary;
+}
