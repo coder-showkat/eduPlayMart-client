@@ -17,3 +17,7 @@ body {
 .menu-horizontal .active {
   @apply bg-inherit text-primary;
 }
+
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 60px -30px;
+}
