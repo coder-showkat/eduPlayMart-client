@@ -19,5 +19,13 @@ body {
 }
 
 .custom-shadow {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 60px -30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 60px -30px;
 }
+
+.react-tabs__tab-list {
+  @apply text-center font-semibold;
+}
+
+/* .react-tabs__tab--selected {
+  @apply text-primary;
+} */

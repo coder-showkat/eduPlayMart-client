@@ -44,7 +44,7 @@ const gallery = [
 
 const Gallery = () => {
   return (
-    <div className="container my-16 pt-8">
+    <div className="container my-20">
       <h1 className="text-center text-5xl font-extrabold mb-12 font-nunito">
         Gallery
       </h1>
