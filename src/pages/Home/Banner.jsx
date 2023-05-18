@@ -52,12 +52,12 @@ const Banner = () => {
       {bannerContent.map((content) => (
         <SwiperSlide key={content.id}>
           <div
-            className="h-[600px] lg:h-[700px] bg-cover bg-center flex items-center justify-end relative"
+            className="h-[600px] lg:h-[700px] bg-cover bg-center flex items-center justify-end"
             style={{ backgroundImage: `url(${content.img})` }}
           >
             <div className="bg-white/80 p-4 max-w-xl space-y-4 lg:space-y-7 mx-[8%]">
               <h3 className="text-2xl font-semibold">{content.subHeading}</h3>
-              <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold font-nunito text-secondary">
+              <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold font-nunito text-secondary mb-2">
                 {content.heading}
               </h1>
               <p className="md:text-lg pb-2">{content.desc}</p>
