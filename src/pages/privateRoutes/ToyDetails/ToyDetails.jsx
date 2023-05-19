@@ -11,6 +11,7 @@ const ToyDetails = () => {
     name,
     sellerName,
     sellerEmail,
+    subCategory,
     price,
     rating,
     availableQty,
@@ -27,7 +28,7 @@ const ToyDetails = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/all-toys">All Toys</Link>
+            <Link>{subCategory}</Link>
           </li>
           <li>{name}</li>
         </ul>
