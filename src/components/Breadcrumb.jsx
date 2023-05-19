@@ -9,7 +9,7 @@ const Breadcrumb = ({ heading, children }) => {
         backgroundImage: `linear-gradient(to bottom, rgba(254, 191, 0, 0.8), rgba(254, 191, 0, 0.8)), url(${bg})`,
       }}
     >
-      <h1 className="font-nunito font-extrabold text-4xl">{heading}</h1>
+      <h1 className="font-nunito font-extrabold text-4xl mb-2">{heading}</h1>
       <div className="breadcrumbs">{children}</div>
     </div>
   );
