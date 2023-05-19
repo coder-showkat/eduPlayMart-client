@@ -27,6 +27,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
         </ul>
       </div>
       <div className="shrink-0">

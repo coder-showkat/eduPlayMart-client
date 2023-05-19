@@ -6,7 +6,7 @@ import StarRatings from "react-star-ratings";
 const SingleCategoryItem = ({ item }) => {
   const { _id, image, name, price, rating } = item;
   return (
-    <div className="card card-compact w-full custom-shadow rounded-none">
+    <div className="card card-compact w-full shadow-sm rounded-none">
       <figure>
         <img
           src={image}

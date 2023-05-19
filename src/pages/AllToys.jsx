@@ -61,7 +61,7 @@ const AllToys = () => {
           <li>All Toys</li>
         </ul>
       </Breadcrumb>
-      <div className="container mt-20 mb-10">
+      <div className="container mt-20 mb-16">
         <div className="my-6 bg-base-200 p-4 flex justify-center lg:justify-between gap-x-10 gap-y-6 flex-wrap">
           <form onSubmit={handleSearch} className="form-control">
             <div className="input-group">
