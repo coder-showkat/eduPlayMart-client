@@ -1,5 +1,5 @@
 {
-  "name": "edukit-client",
+  "name": "eduplaymart-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,13 +12,16 @@
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "daisyui": "^2.51.6",
+    "firebase": "^9.22.0",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
+    "react-spinners": "^0.13.8",
     "react-star-ratings": "^2.3.0",
     "react-tabs": "^6.0.1",
+    "sweetalert2": "^11.7.5",
     "swiper": "^9.3.2"
   },
   "devDependencies": {

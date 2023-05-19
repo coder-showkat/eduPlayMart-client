@@ -23,32 +23,35 @@ const AddAToy = () => {
         <div className="card w-full max-w-3xl mx-auto bg-base-200 rounded-none">
           <form onSubmit={handleAdd} className="card-body">
             <div className="form-control">
-              <label className="label">
+              <label className="label" htmlFor="image">
                 <span className="label-text">Image URL</span>
               </label>
               <input
                 type="text"
+                id="image"
                 placeholder="image url"
                 className="input input-bordered focus:outline-none"
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label" htmlFor="name">
                 <span className="label-text">Toy Name</span>
               </label>
               <input
                 type="text"
+                id="name"
                 placeholder="toy name"
                 className="input input-bordered focus:outline-none"
               />
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-6">
               <div className="flex-1 form-control">
-                <label className="label">
+                <label className="label" htmlFor="price">
                   <span className="label-text">Price</span>
                 </label>
                 <input
                   type="text"
+                  id="price"
                   placeholder="price"
                   className="input input-bordered focus:outline-none"
                 />
@@ -59,6 +62,7 @@ const AddAToy = () => {
                 </label>
                 <select
                   className="select select-bordered w-full focus:outline-none font-normal"
+                  id="subCategory"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -72,11 +76,12 @@ const AddAToy = () => {
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-6">
               <div className="flex-1 form-control">
-                <label className="label">
+                <label className="label" htmlFor="availableQty">
                   <span className="label-text">Available Quantity</span>
                 </label>
                 <input
                   type="text"
+                  id="availableQty"
                   placeholder="available quantity"
                   className="input input-bordered focus:outline-none"
                 />
@@ -87,6 +92,7 @@ const AddAToy = () => {
                 </label>
                 <select
                   className="select select-bordered w-full focus:outline-none font-normal"
+                  id="rating"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -102,11 +108,12 @@ const AddAToy = () => {
               </div>
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label" htmlFor="details">
                 <span className="label-text">Details Description</span>
               </label>
               <textarea
                 placeholder="description"
+                id="details"
                 className="input input-bordered py-2 min-h-16 focus:outline-none"
               />
             </div>

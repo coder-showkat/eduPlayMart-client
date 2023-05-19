@@ -8,15 +8,19 @@ import {
 } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.webp";
+import logo from "../assets/images/logo.png";
 
 const Footer = () => {
   return (
     <footer className="pt-10">
       <div className="footer container py-4">
         <div>
-          <Link to="/">
-            <img src={logo} alt="logo" className="w-40 mb-3" />
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="logo" className="w-14" />
+            <h2 className="font-nunito font-extrabold text-2xl mt-1 ml-1 text-secondary-focus leading-10 letter tracking-tighter">
+              <span className="text-primary">Edu</span>
+              PlayMart
+            </h2>
           </Link>
           <a className="link link-hover flex items-center gap-2">
             <FaFacebookF /> Facebook
