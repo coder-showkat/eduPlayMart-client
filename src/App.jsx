@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Main from "./Layouts/Main";
 import { homeLoader } from "./loader/home.loader";
+import { myToysLoader } from "./loader/myToys.loader";
 import { toyDetailsLoader } from "./loader/toyDetails.loader";
 import AllToys from "./pages/AllToys";
 import Blogs from "./pages/Blogs";
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             <MyToys />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/api/toys"),
+        loader: myToysLoader,
       },
       {
         path: "/seller/add-toy",

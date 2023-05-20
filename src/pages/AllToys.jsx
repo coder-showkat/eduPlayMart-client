@@ -134,6 +134,7 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody>
+              {/* rows */}
               {allToys.map((toy) => (
                 <tr key={toy._id}>
                   <td></td>

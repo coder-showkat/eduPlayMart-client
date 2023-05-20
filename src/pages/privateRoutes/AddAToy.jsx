@@ -1,9 +1,80 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import Breadcrumb from "../../components/Breadcrumb";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AddAToy = () => {
+  const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const handleAdd = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const form = e.target;
+      const image = form.image.value;
+      const name = form.name.value;
+      const sellerName = user.displayName;
+      const sellerEmail = user.email;
+      const subCategory = form.subCategory.value;
+      const price = Number(form.price.value);
+      const rating = Number(form.rating.value);
+      const availableQty = Number(form.availableQty.value);
+      const details = form.details.value;
+      const isValidAllField = [
+        image.trim(),
+        name.trim(),
+        sellerName.trim(),
+        sellerEmail.trim(),
+        subCategory,
+        price,
+        rating,
+        availableQty,
+        details.trim(),
+      ].every(Boolean);
+
+      if (!isValidAllField)
+        throw new Error("Please input all field by valid information");
+
+      const token = localStorage.getItem("token");
+
+      const res = await fetch("http://localhost:5000/api/seller/toys", {
+        method: "POST",
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          image,
+          name,
+          sellerName,
+          sellerEmail,
+          subCategory,
+          price,
+          rating,
+          availableQty,
+          details,
+        }),
+      });
+      const json = await res.json();
+      if (json.error) throw new Error(json.error);
+      Swal.fire({
+        icon: "success",
+        text: "Toy is added successfully!",
+      });
+      form.reset();
+      navigate("/seller/toys");
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Failed to add!",
+        text: error.message,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <>
@@ -118,8 +189,11 @@ const AddAToy = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button type="submit" className="btn btn-primary">
-                Add
+              <button
+                type="submit"
+                className={`btn btn-primary ${loading ? "loading" : ""}`}
+              >
+                {!loading && "Add"}
               </button>
             </div>
           </form>
