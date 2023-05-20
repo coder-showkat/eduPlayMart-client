@@ -2,6 +2,7 @@ import { FaFacebookF, FaGoogle, FaPinterest, FaTwitter } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Breadcrumb from "../../../components/Breadcrumb";
+import usePageTitle from "../../../hooks/usePageTitle";
 import RelatedToys from "./RelatedToys";
 
 const ToyDetails = () => {
@@ -17,6 +18,7 @@ const ToyDetails = () => {
     availableQty,
     details,
   } = toyDetails;
+  usePageTitle("Toy | " + name);
 
   return (
     <div>

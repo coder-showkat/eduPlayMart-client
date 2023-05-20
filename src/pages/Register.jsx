@@ -3,9 +3,11 @@ import { Link, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Breadcrumb from "../components/Breadcrumb";
 import Spinner from "../components/Spinner";
+import usePageTitle from "../hooks/usePageTitle";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
+  usePageTitle("Register");
   const { user, loading, error, createUser } = useContext(AuthContext);
   const [internalError, setInternalError] = useState(null);
 

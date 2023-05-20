@@ -6,9 +6,11 @@ import { BarLoader } from "react-spinners";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
 import Breadcrumb from "../../../components/Breadcrumb";
+import usePageTitle from "../../../hooks/usePageTitle";
 import EditToy from "./EditToy";
 
 const MyToys = () => {
+  usePageTitle("My Toys");
   const loaderData = useLoaderData();
   const [toys, setToys] = useState(loaderData);
   const [loading, setLoading] = useState(false);

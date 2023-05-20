@@ -4,9 +4,11 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import Breadcrumb from "../components/Breadcrumb";
 import Spinner from "../components/Spinner";
+import usePageTitle from "../hooks/usePageTitle";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+  usePageTitle("Login");
   const { user, loading, error, loginUser, loginWithGoogle } =
     useContext(AuthContext);
 

@@ -3,8 +3,10 @@ import { Link, useLoaderData } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import StarRatings from "react-star-ratings";
 import Breadcrumb from "../components/Breadcrumb";
+import usePageTitle from "../hooks/usePageTitle";
 
 const AllToys = () => {
+  usePageTitle("All Toys");
   const loaderData = useLoaderData();
   const [allToys, setAllToys] = useState(loaderData.toys);
   const [loading, setLoading] = useState(false);

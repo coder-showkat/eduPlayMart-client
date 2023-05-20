@@ -28,7 +28,7 @@ body {
 }
 
 .tabs {
-  @apply w-fit mx-auto font-semibold;
+  @apply justify-center gap-y-4 font-semibold;
 }
 
 .react-tabs__tab--selected {

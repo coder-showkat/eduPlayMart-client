@@ -30,7 +30,7 @@ const SingleCategoryItem = ({ item }) => {
             to={`/toy/${_id}`}
             className="text-2xl text-primary hover:text-primary-focus active:scale-95"
           >
-            <HiArrowRight className="animate-bounce" />
+            <HiArrowRight />
           </Link>
         </div>
       </div>

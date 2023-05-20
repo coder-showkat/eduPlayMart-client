@@ -1,3 +1,4 @@
+import usePageTitle from "../../hooks/usePageTitle";
 import Banner from "./Banner";
 import Discount from "./Discount";
 import Features from "./Features";
@@ -7,6 +8,7 @@ import ShopByCategory from "./ShopByCategory";
 import Testimonials from "./Testimonials";
 
 const Home = () => {
+  usePageTitle("Home");
   return (
     <div>
       <Banner />

@@ -1,14 +1,17 @@
+import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
-import img from "../assets/images/404_page.gif";
+import lottie404 from "../assets/404_page.json";
+import usePageTitle from "../hooks/usePageTitle";
 
 const ErrorPage = () => {
+  usePageTitle("404 Page Not Found");
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <div className="relative w-full">
-        <img src={img} alt="404 Page" className="w-fit mx-auto" />
+      <div className="relative w-full max-w-xl mx-auto">
+        <Lottie animationData={lottie404} />
         <Link
           to="/"
-          className="btn btn-primary w-44 normal-case rounded-full transition-colors duration-300 absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2"
+          className="btn btn-primary w-44 normal-case rounded-full transition-colors absolute left-1/2 -translate-x-1/2"
         >
           <svg
             className="animate-bounce inline-block w-4 h-4 mr-2"

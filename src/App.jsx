@@ -4,6 +4,7 @@ import { homeLoader } from "./loader/home.loader";
 import { myToysLoader } from "./loader/myToys.loader";
 import { toyDetailsLoader } from "./loader/toyDetails.loader";
 import AllToys from "./pages/AllToys";
+import Blog from "./pages/Blog";
 import Blogs from "./pages/Blogs";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home/Home";
@@ -67,6 +68,13 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+        loader: () => fetch("https://eduplaymart-sam.vercel.app/api/blogs"),
+      },
+      {
+        path: "/blog/:id",
+        element: <Blog />,
+        loader: ({ params }) =>
+          fetch(`https://eduplaymart-sam.vercel.app/api/blogs/${params.id}`),
       },
     ],
   },

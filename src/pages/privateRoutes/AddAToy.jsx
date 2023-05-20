@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Breadcrumb from "../../components/Breadcrumb";
+import usePageTitle from "../../hooks/usePageTitle";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const AddAToy = () => {
+  usePageTitle("Add A Toy");
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
