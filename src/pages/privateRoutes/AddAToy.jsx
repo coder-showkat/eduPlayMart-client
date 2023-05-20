@@ -40,24 +40,27 @@ const AddAToy = () => {
 
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/api/seller/toys", {
-        method: "POST",
-        headers: {
-          Authorization: token,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          image,
-          name,
-          sellerName,
-          sellerEmail,
-          subCategory,
-          price,
-          rating,
-          availableQty,
-          details,
-        }),
-      });
+      const res = await fetch(
+        "https://eduplaymart-sam.vercel.app/api/seller/toys",
+        {
+          method: "POST",
+          headers: {
+            Authorization: token,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            image,
+            name,
+            sellerName,
+            sellerEmail,
+            subCategory,
+            price,
+            rating,
+            availableQty,
+            details,
+          }),
+        }
+      );
       const json = await res.json();
       if (json.error) throw new Error(json.error);
       Swal.fire({

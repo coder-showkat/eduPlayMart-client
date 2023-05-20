@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HiPencil } from "react-icons/hi";
 import { MdDeleteForever } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
+import { BarLoader } from "react-spinners";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
 import Breadcrumb from "../../../components/Breadcrumb";
@@ -10,18 +11,21 @@ import EditToy from "./EditToy";
 const MyToys = () => {
   const loaderData = useLoaderData();
   const [toys, setToys] = useState(loaderData);
+  const [loading, setLoading] = useState(false);
   const [selectedToy, setSelectedToy] = useState({});
 
   const handleSorting = (sortBy) => {
+    setLoading(true);
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:5000/api/seller/toys?sort=${sortBy}`, {
+    fetch(`https://eduplaymart-sam.vercel.app/api/seller/toys?sort=${sortBy}`, {
       headers: {
         Authorization: token,
       },
     })
       .then((res) => res.json())
       .then((data) => setToys(data))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
   };
 
   const deleteToy = async (id) => {
@@ -34,7 +38,7 @@ const MyToys = () => {
         try {
           const token = localStorage.getItem("token");
           const res = await fetch(
-            `http://localhost:5000/api/seller/toys/${id}`,
+            `https://eduplaymart-sam.vercel.app/api/seller/toys/${id}`,
             {
               method: "DELETE",
               headers: {
@@ -92,7 +96,17 @@ const MyToys = () => {
             </select>
           </div>
         </div>
-        {toys.length > 0 ? (
+        {loading ? (
+          <div className="flex flex-col items-center justify-center my-12">
+            <h3 className="text-lg mb-2">Loading...</h3>
+            <BarLoader
+              color="#FEBF00"
+              speedMultiplier={1.5}
+              height={10}
+              width={200}
+            />
+          </div>
+        ) : toys.length > 0 ? (
           <div className="overflow-x-auto w-full">
             <table className="table w-full text-center">
               {/* head */}

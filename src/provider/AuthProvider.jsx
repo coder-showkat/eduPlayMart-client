@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        fetch("http://localhost:5000/api/jwt", {
+        fetch("https://eduplaymart-sam.vercel.app/api/jwt", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -21,18 +21,21 @@ const EditToy = ({ selectedToy, setToys }) => {
       if (!isValidAllField)
         throw new Error("Please input all field by valid info");
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/seller/toys/${_id}`, {
-        method: "PUT",
-        headers: {
-          Authorization: token,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          price,
-          availableQty,
-          details,
-        }),
-      });
+      const res = await fetch(
+        `https://eduplaymart-sam.vercel.app/api/seller/toys/${_id}`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: token,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            price,
+            availableQty,
+            details,
+          }),
+        }
+      );
 
       const json = await res.json();
       if (json.error) throw new Error(json.error);

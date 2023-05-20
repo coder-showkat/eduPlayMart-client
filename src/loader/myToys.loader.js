@@ -1,6 +1,6 @@
 export const myToysLoader = async () => {
     const token = localStorage.getItem("token");
-    const myToys = await fetch("http://localhost:5000/api/seller/toys", {
+    const myToys = await fetch("https://eduplaymart-sam.vercel.app/api/seller/toys", {
         headers: {
             Authorization: token,
         }

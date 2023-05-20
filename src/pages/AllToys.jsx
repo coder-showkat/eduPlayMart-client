@@ -25,7 +25,7 @@ const AllToys = () => {
   const handlePageChange = (page) => {
     setLoading(true);
     fetch(
-      `http://localhost:5000/api/toys?search=${searchString}&sort=${sortBy}&page=${page}&limit=${limit}`
+      `https://eduplaymart-sam.vercel.app/api/toys?search=${searchString}&sort=${sortBy}&page=${page}&limit=${limit}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -41,7 +41,7 @@ const AllToys = () => {
     if (!firstLoad) {
       setLoading(true);
       fetch(
-        `http://localhost:5000/api/toys?search=${searchString}&sort=${sortBy}&limit=${limit}`
+        `https://eduplaymart-sam.vercel.app/api/toys?search=${searchString}&sort=${sortBy}&limit=${limit}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -125,7 +125,7 @@ const AllToys = () => {
         </div>
 
         {loading ? (
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center my-12">
             <h3 className="text-lg mb-2">Loading...</h3>
             <BarLoader
               color="#FEBF00"
