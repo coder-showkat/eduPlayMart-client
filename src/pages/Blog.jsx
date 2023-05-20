@@ -38,7 +38,7 @@ const Blog = () => {
           <div className="flex items-center">
             <BiCalendar className="text-2xl mr-2" />
             <h3 className="opacity-75">
-              {moment(date).format("MMM Do, YYYY")}
+              {moment(date).format("MMM DD, YYYY")}
             </h3>
           </div>
         </div>

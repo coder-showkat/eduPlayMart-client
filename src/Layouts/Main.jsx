@@ -5,6 +5,7 @@ import Spinner from "../components/Spinner";
 
 const Main = () => {
   const { state } = useNavigation();
+
   return (
     <>
       <Navbar />

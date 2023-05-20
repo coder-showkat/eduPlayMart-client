@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Main from "./Layouts/Main";
+import Spinner from "./components/Spinner";
 import { homeLoader } from "./loader/home.loader";
 import { myToysLoader } from "./loader/myToys.loader";
 import { toyDetailsLoader } from "./loader/toyDetails.loader";
@@ -81,7 +82,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return <RouterProvider fallbackElement={<Spinner />} router={router} />;
 };
 
 export default App;

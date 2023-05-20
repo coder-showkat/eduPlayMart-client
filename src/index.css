@@ -15,7 +15,7 @@ body {
 }
 
 .menu-horizontal a {
-  @apply hover:bg-inherit font-semibold hover:text-primary duration-300;
+  @apply bg-inherit font-semibold hover:text-primary duration-300;
 }
 
 .menu-horizontal .active {

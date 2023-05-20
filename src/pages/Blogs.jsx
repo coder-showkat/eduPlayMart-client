@@ -43,7 +43,7 @@ const Blogs = () => {
                   <div className="flex items-center">
                     <BiCalendar className="text-2xl mr-2" />
                     <h3 className="opacity-75">
-                      {moment(blog.date).format("MMM Do, YYYY")}
+                      {moment(blog.date).format("MMM DD, YYYY")}
                     </h3>
                   </div>
                 </div>

@@ -2,14 +2,19 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import loadingSvg from "../../assets/spinner.svg";
+import { useLazyImage } from "../../hooks/useLazyImage";
 
 const SingleCategoryItem = ({ item }) => {
   const { _id, image, name, price, rating } = item;
+  const { imageRef, shouldLoadImage } = useLazyImage();
+
   return (
     <div className="card card-compact w-full shadow-sm rounded-none">
       <figure>
         <img
-          src={image}
+          ref={imageRef}
+          src={shouldLoadImage ? image : loadingSvg}
           alt="Shoes"
           className="w-full aspect-square object-cover object-center"
         />

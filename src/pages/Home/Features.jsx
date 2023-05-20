@@ -1,29 +1,25 @@
 import { Link } from "react-router-dom";
 import bg from "../../assets/images/features_bg.webp";
-import icon1 from "../../assets/images/icon_4.png";
-import icon2 from "../../assets/images/icon_5.png";
-import icon3 from "../../assets/images/icon_6.png";
-import icon4 from "../../assets/images/icon_7.png";
 
 const features = [
   {
     id: 1,
-    icon: icon1,
+    icon: "https://i.ibb.co/4YS2B1Y/icon-4.png",
     name: "Beautiful & well-designed",
   },
   {
     id: 2,
-    icon: icon2,
+    icon: "https://i.ibb.co/DGw9mCk/icon-5.png",
     name: "High durable toys",
   },
   {
     id: 3,
-    icon: icon3,
+    icon: "https://i.ibb.co/7YtQWbz/icon-6.png",
     name: "Recyclable materials",
   },
   {
     id: 4,
-    icon: icon4,
+    icon: "https://i.ibb.co/876Y5GJ/icon-7.png",
     name: "Safe & non-toxic",
   },
 ];
