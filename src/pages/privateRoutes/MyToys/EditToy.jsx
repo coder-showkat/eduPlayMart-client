@@ -49,6 +49,8 @@ const EditToy = ({ selectedToy, setToys }) => {
       form.reset();
       Swal.fire({
         icon: "success",
+        iconColor: "#FEBF00",
+        confirmButtonColor: "#FEBF00",
         text: "Toy is updated successfully!",
       });
     } catch (error) {

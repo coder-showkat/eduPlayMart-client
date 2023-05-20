@@ -8,11 +8,14 @@ const ShopByCategory = () => {
 
   return (
     <div className="container my-20 pt-8">
-      <h1 className="text-center text-5xl font-extrabold mb-12 font-nunito">
+      <h1
+        className="text-center text-5xl font-extrabold mb-12 font-nunito"
+        data-aos="zoom-in"
+      >
         Shop by Category
       </h1>
       <Tabs>
-        <TabList className="tabs">
+        <TabList className="tabs" data-aos="fade-left">
           <Tab className="text-lg tab tab-bordered">Toys & Games</Tab>
           <Tab className="text-lg tab tab-bordered">Puzzle Toys</Tab>
           <Tab className="text-lg tab tab-bordered">

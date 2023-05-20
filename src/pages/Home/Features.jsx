@@ -31,12 +31,19 @@ const Features = () => {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="p-4 text-white max-w-xl space-y-8 lg:space-y-12 mx-[8%]">
-        <h1 className="text-5xl xl:text-6xl font-extrabold font-nunito">
+        <h1
+          className="text-5xl xl:text-6xl font-extrabold font-nunito"
+          data-aos="zoom-in"
+        >
           Safe toys for children
         </h1>
         <ul className="space-y-6 lg:space-y-10">
           {features.map((feature) => (
-            <li key={feature.id} className="flex items-center gap-3">
+            <li
+              key={feature.id}
+              className="flex items-center gap-3"
+              data-aos="fade-left"
+            >
               <img src={feature.icon} alt="" className="w-11" />
               <h3 className="text-2xl font-medium font-nunito">
                 {feature.name}
@@ -47,6 +54,7 @@ const Features = () => {
         <Link
           to="/all-toys"
           className="btn lg:btn-lg btn-primary normal-case rounded-full w-40 md:w-44 xl:w-48 font-extrabold"
+          data-aos="fade-left"
         >
           Get Started Now
         </Link>

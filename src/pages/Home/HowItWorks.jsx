@@ -5,12 +5,20 @@ const HowItWorks = () => {
 
   return (
     <div className="container my-24 pt-8">
-      <h1 className="text-center text-5xl font-extrabold mb-12 font-nunito">
+      <h1
+        className="text-center text-5xl font-extrabold mb-12 font-nunito"
+        data-aos="zoom-in"
+      >
         Here&rsquo;s how it works
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {contents.map((content) => (
-          <div key={content.id} className="space-y-5 text-center">
+          <div
+            key={content.id}
+            className="space-y-5 text-center"
+            data-aos="fade-up"
+            data-aos-delay={100}
+          >
             <img
               src={content.img}
               alt={content.title}

@@ -8,7 +8,10 @@ const Testimonials = () => {
   const { testimonials } = useLoaderData();
   return (
     <div className="container my-20">
-      <h1 className="text-center text-5xl font-extrabold mb-12 font-nunito">
+      <h1
+        className="text-center text-5xl font-extrabold mb-12 font-nunito"
+        data-aos="zoom-in"
+      >
         What our customers say
       </h1>
       <Swiper
@@ -38,7 +41,10 @@ const Testimonials = () => {
       >
         {testimonials.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="w-full text-center space-y-6">
+            <div
+              className="w-full text-center space-y-6"
+              data-aos="zoom-out-up"
+            >
               <img
                 src={item.avatar}
                 alt=""

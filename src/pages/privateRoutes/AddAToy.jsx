@@ -67,6 +67,8 @@ const AddAToy = () => {
       if (json.error) throw new Error(json.error);
       Swal.fire({
         icon: "success",
+        iconColor: "#FEBF00",
+        confirmButtonColor: "#FEBF00",
         text: "Toy is added successfully!",
       });
       form.reset();

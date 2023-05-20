@@ -11,7 +11,7 @@ const ErrorPage = () => {
         <Lottie animationData={lottie404} />
         <Link
           to="/"
-          className="btn btn-primary w-44 normal-case rounded-full transition-colors absolute left-1/2 -translate-x-1/2"
+          className="py-3 w-44 bg-primary hover:bg-black hover:text-white font-bold active:scale-95 duration-300 rounded-full absolute text-center left-1/2 -translate-x-1/2"
         >
           <svg
             className="animate-bounce inline-block w-4 h-4 mr-2"

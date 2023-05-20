@@ -82,7 +82,16 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider fallbackElement={<Spinner />} router={router} />;
+  return (
+    <RouterProvider
+      fallbackElement={
+        <div className="h-screen flex justify-center items-center">
+          <Spinner />
+        </div>
+      }
+      router={router}
+    />
+  );
 };
 
 export default App;

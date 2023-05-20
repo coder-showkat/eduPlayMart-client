@@ -11,7 +11,13 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logoutUser()
-      .then(() => Swal.fire({ icon: "success", text: "Log out successful!" }))
+      .then(() =>
+        Swal.fire({
+          icon: "success",
+          iconColor: "#FEBF00",
+          text: "Log out successful!",
+        })
+      )
       .catch((err) => Swal.fire({ icon: "error", text: err.message }));
   };
   return (

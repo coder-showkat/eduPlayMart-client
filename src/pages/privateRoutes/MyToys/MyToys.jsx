@@ -32,9 +32,12 @@ const MyToys = () => {
 
   const deleteToy = async (id) => {
     Swal.fire({
+      icon: "question",
       title: "Are you sure? You want to delete this toy?",
       showCancelButton: true,
       confirmButtonText: "Yes! Delete",
+      iconColor: "#FEBF00",
+      confirmButtonColor: "#FEBF00",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -56,6 +59,8 @@ const MyToys = () => {
           });
           Swal.fire({
             icon: "success",
+            iconColor: "#FEBF00",
+            confirmButtonColor: "#FEBF00",
             text: "Item is deleted successfully!",
           });
         } catch (error) {
@@ -114,16 +119,16 @@ const MyToys = () => {
               {/* head */}
               <thead>
                 <tr>
-                  <th></th>
+                  <th className="font-extrabold text-base">Sl.</th>
                   <th className="font-extrabold text-base">Toy Name</th>
                   <th className="font-extrabold text-base">Subcategory</th>
                   <th className="font-extrabold text-base">Price</th>
                   <th className="font-extrabold text-base">
                     Available Quantity
                   </th>
-                  <th className="font-extrabold text-base"></th>
-                  <th className="font-extrabold text-base"></th>
-                  <th className="font-extrabold text-base"></th>
+                  <th className="font-extrabold text-base">Details</th>
+                  <th className="font-extrabold text-base">Edit</th>
+                  <th className="font-extrabold text-base">Delete</th>
                 </tr>
               </thead>
               <tbody>

@@ -11,6 +11,7 @@ const GalleryImage = ({ item }) => {
       ref={imageRef}
       src={shouldLoadImage ? item.img : loadingSvg}
       className="w-full aspect-square object-cover object-center border-2 border-white custom-shadow"
+      data-aos="zoom-out-up"
     />
   );
 };
@@ -20,7 +21,10 @@ const Gallery = () => {
 
   return (
     <div className="container my-20">
-      <h1 className="text-center text-5xl font-extrabold mb-12 font-nunito">
+      <h1
+        className="text-center text-5xl font-extrabold mb-12 font-nunito"
+        data-aos="zoom-in"
+      >
         Gallery
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 xl:gap-8">

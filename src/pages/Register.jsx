@@ -34,6 +34,8 @@ const Register = () => {
       if (result.message)
         Swal.fire({
           icon: "success",
+          iconColor: "#FEBF00",
+          confirmButtonColor: "#FEBF00",
           text: result.message,
         });
       form.reset();

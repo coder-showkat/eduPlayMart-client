@@ -1,16 +1,24 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import { HiArrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import Swal from "sweetalert2";
 import loadingSvg from "../../assets/spinner.svg";
 import { useLazyImage } from "../../hooks/useLazyImage";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const SingleCategoryItem = ({ item }) => {
+  const { user } = useContext(AuthContext);
   const { _id, image, name, price, rating } = item;
   const { imageRef, shouldLoadImage } = useLazyImage();
+  const navigate = useNavigate();
 
   return (
-    <div className="card card-compact w-full shadow-sm rounded-none">
+    <div
+      className="card card-compact w-full shadow-sm rounded-none"
+      data-aos="zoom-out-up"
+    >
       <figure>
         <img
           ref={imageRef}
@@ -31,12 +39,21 @@ const SingleCategoryItem = ({ item }) => {
         />
         <div className="card-actions justify-between mt-2">
           <h3 className="text-lg font-semibold">${price}</h3>
-          <Link
-            to={`/toy/${_id}`}
+          <button
+            onClick={() => {
+              if (!user)
+                Swal.fire({
+                  icon: "info",
+                  iconColor: "#FEBF00",
+                  text: "You have to log in first to view details",
+                  confirmButtonColor: "#FEBF00",
+                });
+              navigate(`/toy/${_id}`);
+            }}
             className="text-2xl text-primary hover:text-primary-focus active:scale-95"
           >
             <HiArrowRight />
-          </Link>
+          </button>
         </div>
       </div>
     </div>

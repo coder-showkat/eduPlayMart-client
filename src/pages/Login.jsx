@@ -21,13 +21,25 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     const result = await loginUser(email, password);
-    if (result.message) Swal.fire({ icon: "success", text: result.message });
+    if (result.message)
+      Swal.fire({
+        icon: "success",
+        iconColor: "#FEBF00",
+        confirmButtonColor: "#FEBF00",
+        text: result.message,
+      });
     form.reset();
   };
 
   const handleGoogleLogin = async () => {
     const result = await loginWithGoogle();
-    if (result.message) Swal.fire({ icon: "success", text: result.message });
+    if (result.message)
+      Swal.fire({
+        icon: "success",
+        iconColor: "#FEBF00",
+        confirmButtonColor: "#FEBF00",
+        text: result.message,
+      });
   };
 
   if (loading) return <Spinner />;

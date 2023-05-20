@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import StarRatings from "react-star-ratings";
+import Swal from "sweetalert2";
 import Breadcrumb from "../components/Breadcrumb";
 import usePageTitle from "../hooks/usePageTitle";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AllToys = () => {
   usePageTitle("All Toys");
+  const { user } = useContext(AuthContext);
   const loaderData = useLoaderData();
   const [allToys, setAllToys] = useState(loaderData.toys);
   const [loading, setLoading] = useState(false);
@@ -17,6 +20,7 @@ const AllToys = () => {
   const [sortBy, setSortBy] = useState("");
   const numberOfPage = Math.ceil(numberOfToys / limit);
   const [firstLoad, setFirstLoad] = useState(true);
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -150,7 +154,7 @@ const AllToys = () => {
                   <th className="font-extrabold text-base">
                     Available Quantity
                   </th>
-                  <th className="font-extrabold text-base"></th>
+                  <th className="font-extrabold text-base">Details</th>
                 </tr>
               </thead>
               <tbody>
@@ -188,12 +192,21 @@ const AllToys = () => {
                     <td className="font-semibold">${toy.price}</td>
                     <td>{toy.availableQty}</td>
                     <th>
-                      <Link
-                        to={`/toy/${toy._id}`}
+                      <button
+                        onClick={() => {
+                          if (!user)
+                            Swal.fire({
+                              icon: "info",
+                              iconColor: "#FEBF00",
+                              text: "You have to log in first to view details",
+                              confirmButtonColor: "#FEBF00",
+                            });
+                          navigate(`/toy/${toy._id}`);
+                        }}
                         className="btn btn-primary btn-xs"
                       >
                         details
-                      </Link>
+                      </button>
                     </th>
                   </tr>
                 ))}
