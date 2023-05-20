@@ -1,7 +1,8 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { Autoplay, Navigation } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import bg1 from "../../assets/images/slider1-bg.jpg";
 import bg2 from "../../assets/images/slider2-bg.jpg";
@@ -34,7 +35,7 @@ const bannerContent = [
 const Banner = () => {
   return (
     <Swiper
-      modules={[Navigation, Autoplay]}
+      modules={[Navigation, Autoplay, Pagination]}
       spaceBetween={30}
       slidesPerView={1}
       grabCursor
@@ -46,6 +47,9 @@ const Banner = () => {
       navigation={{
         prevEl: ".prev-btn",
         nextEl: ".next-btn",
+      }}
+      pagination={{
+        clickable: true,
       }}
       className="relative"
     >
