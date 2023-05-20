@@ -18,8 +18,6 @@ const ToyDetails = () => {
     details,
   } = toyDetails;
 
-  console.log(relatedToys);
-
   return (
     <div>
       <Breadcrumb heading="Toy">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bg from "../../assets/images/features_bg.webp";
 import icon1 from "../../assets/images/icon_4.png";
 import icon2 from "../../assets/images/icon_5.png";
@@ -47,9 +48,12 @@ const Features = () => {
             </li>
           ))}
         </ul>
-        <button className="btn lg:btn-lg btn-primary normal-case rounded-full w-40 md:w-44 xl:w-48 font-extrabold">
+        <Link
+          to="/all-toys"
+          className="btn lg:btn-lg btn-primary normal-case rounded-full w-40 md:w-44 xl:w-48 font-extrabold"
+        >
           Get Started Now
-        </button>
+        </Link>
       </div>
     </div>
   );

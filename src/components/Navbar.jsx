@@ -53,7 +53,8 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
-              className="btn btn-primary btn-circle avatar overflow-hidden p-0.5"
+              className="btn btn-primary btn-circle avatar p-0.5 tooltip tooltip-left normal-case"
+              data-tip={user.displayName}
             >
               <img
                 src={user.photoURL}

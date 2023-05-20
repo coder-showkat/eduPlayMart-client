@@ -3,6 +3,7 @@ import { HiPencil } from "react-icons/hi";
 import { MdDeleteForever } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import Swal from "sweetalert2";
 import Breadcrumb from "../../../components/Breadcrumb";
 import EditToy from "./EditToy";
 
@@ -10,7 +11,57 @@ const MyToys = () => {
   const loaderData = useLoaderData();
   const [toys, setToys] = useState(loaderData);
   const [selectedToy, setSelectedToy] = useState({});
-  console.log(toys);
+
+  const handleSorting = (sortBy) => {
+    const token = localStorage.getItem("token");
+    fetch(`http://localhost:5000/api/seller/toys?sort=${sortBy}`, {
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setToys(data))
+      .catch((err) => console.error(err));
+  };
+
+  const deleteToy = async (id) => {
+    Swal.fire({
+      title: "Are you sure? You want to delete this toy?",
+      showCancelButton: true,
+      confirmButtonText: "Yes! Delete",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const token = localStorage.getItem("token");
+          const res = await fetch(
+            `http://localhost:5000/api/seller/toys/${id}`,
+            {
+              method: "DELETE",
+              headers: {
+                Authorization: token,
+              },
+            }
+          );
+          const json = await res.json();
+          if (json.error) throw new Error(json.error);
+          setToys((toys) => {
+            toys.filter((toy) => toy._id !== id);
+            return { ...toys };
+          });
+          Swal.fire({
+            icon: "success",
+            text: "Item is deleted successfully!",
+          });
+        } catch (error) {
+          Swal.fire({
+            icon: "error",
+            title: "Failed to delete!",
+            text: error.message,
+          });
+        }
+      }
+    });
+  };
 
   return (
     <>
@@ -26,6 +77,21 @@ const MyToys = () => {
         </ul>
       </Breadcrumb>
       <div className="container mt-20 mb-10">
+        <div className="my-6 bg-base-200 p-4">
+          <div className="flex items-center gap-3 w-fit mx-auto">
+            <label htmlFor="sorting">Sort by</label>
+            <select
+              id="sorting"
+              defaultValue=""
+              onChange={(e) => handleSorting(e.target.value)}
+              className="select w-fit focus:outline-none"
+            >
+              <option value="">Featured</option>
+              <option value="price-ascending">Price, low to high</option>
+              <option value="price-descending">Price, high to low</option>
+            </select>
+          </div>
+        </div>
         {toys.length > 0 ? (
           <div className="overflow-x-auto w-full">
             <table className="table w-full text-center">
@@ -96,6 +162,7 @@ const MyToys = () => {
                     <th>
                       <button
                         title="Delete"
+                        onClick={() => deleteToy(toy._id)}
                         className="text-secondary text-3xl hover:text-secondary-focus active:scale-90"
                       >
                         <MdDeleteForever />

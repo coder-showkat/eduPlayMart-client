@@ -1,4 +1,5 @@
 import Countdown from "react-countdown";
+import { Link } from "react-router-dom";
 import bg from "../../assets/images/discount_bg.webp";
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -48,9 +49,12 @@ const Discount = () => {
 
         <Countdown date={Date.now() + 31557600000} renderer={renderer} />
 
-        <button className="btn btn-lg btn-accent hover:bg-neutral hover:text-white normal-case rounded-full w-40 md:w-48 xl:w-52 font-extrabold md:!text-2xl">
+        <Link
+          to="/all-toys"
+          className="btn btn-lg btn-accent hover:bg-neutral hover:text-white normal-case rounded-full w-40 md:w-48 xl:w-52 font-extrabold md:!text-2xl"
+        >
           Shop Now
-        </button>
+        </Link>
       </div>
     </div>
   );
