@@ -42,6 +42,8 @@ const RelatedToys = ({ relatedToys }) => {
             <SingleCategoryItem item={item} />
           </SwiperSlide>
         ))}
+
+        {/* navigation controller buttons */}
         <div className="w-fit mx-auto flex items-center justify-center gap-6 mt-6">
           <button className="prev-btn btn glass text-primary hover:bg-primary-focus hover:text-black btn-square btn-circle text-3xl disabled:opacity-0">
             <HiChevronLeft />

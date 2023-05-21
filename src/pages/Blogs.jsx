@@ -56,6 +56,8 @@ const Blogs = () => {
                 </div>
                 <p data-aos="fade-left">{blog.answer.substring(0, 100)}...</p>
               </div>
+
+              {/* link to go to blog details page */}
               <Link
                 to={`/blog/${blog._id}`}
                 className="btn btn-primary rounded-full w-44 normal-case"

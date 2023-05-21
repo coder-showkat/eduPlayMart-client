@@ -15,6 +15,7 @@ const Login = () => {
   const { state } = useLocation();
   const from = state?.pathname || "/";
 
+  // login with email and password
   const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,6 +33,7 @@ const Login = () => {
     form.reset();
   };
 
+  // login by google
   const handleGoogleLogin = async () => {
     const result = await loginWithGoogle();
     if (result.message)
@@ -44,7 +46,9 @@ const Login = () => {
       });
   };
 
+  // when auth in loading state
   if (loading) return <Spinner />;
+  // when user is already logged in
   if (user) return <Navigate to={from} replace={true} />;
 
   return (
@@ -88,9 +92,12 @@ const Login = () => {
             </div>
             {error && <p className="pt-2 text-center text-error">{error}</p>}
             <div className="form-control mt-6 mb-2">
+              {/* login button */}
               <button type="submit" className="btn btn-primary">
                 Login
               </button>
+
+              {/* link to register page */}
               <p className="text-center mt-2">
                 Don&#39;t have an account?{" "}
                 <Link
@@ -102,6 +109,8 @@ const Login = () => {
               </p>
             </div>
             <div className="divider w-1/2 mx-auto">OR</div>
+
+            {/* login with google button */}
             <button
               onClick={handleGoogleLogin}
               type="button"

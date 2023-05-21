@@ -39,6 +39,8 @@ const SingleCategoryItem = ({ item }) => {
         />
         <div className="card-actions justify-between mt-2">
           <h3 className="text-lg font-semibold">${price}</h3>
+
+          {/* view details button */}
           <button
             onClick={() => {
               if (!user)

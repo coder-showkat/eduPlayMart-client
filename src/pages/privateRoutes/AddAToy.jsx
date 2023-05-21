@@ -11,6 +11,7 @@ const AddAToy = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // add a product action
   const handleAdd = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -84,6 +85,7 @@ const AddAToy = () => {
       setLoading(false);
     }
   };
+
   return (
     <>
       <Breadcrumb heading="Add A Toy">

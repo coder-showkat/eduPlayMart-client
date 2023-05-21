@@ -53,6 +53,7 @@ const Banner = () => {
       }}
       className="relative"
     >
+      {/* banner slides */}
       {bannerContent.map((content) => (
         <SwiperSlide key={content.id}>
           <div
@@ -73,6 +74,7 @@ const Banner = () => {
         </SwiperSlide>
       ))}
 
+      {/* navigation control buttons */}
       <div className="flex justify-between items-center absolute z-10 top-1/2 left-2 right-2 -translate-y-1/2">
         <button className="prev-btn btn glass text-primary hover:bg-primary-focus hover:text-black btn-square btn-circle text-3xl">
           <HiChevronLeft />

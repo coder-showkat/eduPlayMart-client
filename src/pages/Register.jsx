@@ -45,7 +45,9 @@ const Register = () => {
     }
   };
 
+  // when auth in loading state
   if (loading) return <Spinner />;
+  // when user is already logged in
   if (user) return <Navigate to="/" replace={true} />;
 
   return (
@@ -129,6 +131,8 @@ const Register = () => {
               <button type="submit" className="btn btn-primary">
                 Register
               </button>
+
+              {/* link to login page */}
               <p className="text-center mt-2">
                 Already have an account?{" "}
                 <Link

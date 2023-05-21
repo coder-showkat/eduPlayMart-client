@@ -8,6 +8,7 @@ const Testimonials = () => {
   const { testimonials } = useLoaderData();
   return (
     <div className="container my-20">
+      {/* heading */}
       <h1
         className="text-center text-5xl font-extrabold mb-12 font-nunito"
         data-aos="zoom-in"
@@ -39,6 +40,7 @@ const Testimonials = () => {
           },
         }}
       >
+        {/* slides of all comments by customer */}
         {testimonials.map((item) => (
           <SwiperSlide key={item.id}>
             <div
@@ -55,6 +57,8 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
         ))}
+
+        {/* pagination controller */}
         <div className="pagination !w-fit mx-auto pt-5" />
       </Swiper>
     </div>

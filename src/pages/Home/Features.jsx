@@ -31,12 +31,15 @@ const Features = () => {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="p-4 text-white max-w-xl space-y-8 lg:space-y-12 mx-[8%]">
+        {/* heading */}
         <h1
           className="text-5xl xl:text-6xl font-extrabold font-nunito"
           data-aos="zoom-in"
         >
           Safe toys for children
         </h1>
+
+        {/* feature contents */}
         <ul className="space-y-6 lg:space-y-10">
           {features.map((feature) => (
             <li
@@ -51,6 +54,8 @@ const Features = () => {
             </li>
           ))}
         </ul>
+
+        {/* link to go to all toys page */}
         <Link
           to="/all-toys"
           className="btn lg:btn-lg btn-primary normal-case rounded-full w-40 md:w-44 xl:w-48 font-extrabold"

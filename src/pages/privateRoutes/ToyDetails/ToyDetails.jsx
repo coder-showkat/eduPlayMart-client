@@ -79,6 +79,8 @@ const ToyDetails = () => {
             </span>
             <span>{availableQty}</span>
           </p>
+
+          {/* buy now button, will implement action later */}
           <button
             className="btn btn-primary rounded-full w-44 normal-case !text-lg"
             data-aos="fade-left"
@@ -98,6 +100,7 @@ const ToyDetails = () => {
         </div>
       </div>
 
+      {/* related toys */}
       <RelatedToys relatedToys={relatedToys} />
     </div>
   );

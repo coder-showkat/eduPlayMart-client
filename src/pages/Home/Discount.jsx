@@ -2,6 +2,7 @@ import Countdown from "react-countdown";
 import { Link } from "react-router-dom";
 import bg from "../../assets/images/discount_bg.webp";
 
+// time render component
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     return <p className="text-xl font-medium">Sorry! The Offer is expired!</p>;
@@ -35,6 +36,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
+// main component
 const Discount = () => {
   return (
     <div
@@ -44,6 +46,7 @@ const Discount = () => {
       }}
     >
       <div className="container text-center space-y-6">
+        {/* heading */}
         <h1
           className="text-5xl xl:text-6xl font-extrabold font-nunito"
           data-aos="zoom-in"
@@ -57,6 +60,7 @@ const Discount = () => {
 
         <Countdown date={Date.now() + 31557600000} renderer={renderer} />
 
+        {/* link to go to all toys page */}
         <Link
           to="/all-toys"
           className="btn btn-lg btn-accent hover:bg-neutral hover:text-white normal-case rounded-full w-40 md:w-48 xl:w-52 font-extrabold md:!text-2xl"

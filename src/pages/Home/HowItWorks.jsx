@@ -5,12 +5,15 @@ const HowItWorks = () => {
 
   return (
     <div className="container my-24 pt-8">
+      {/* heading */}
       <h1
         className="text-center text-5xl font-extrabold mb-12 font-nunito"
         data-aos="zoom-in"
       >
         Here&rsquo;s how it works
       </h1>
+
+      {/* contents */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {contents.map((content) => (
           <div

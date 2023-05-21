@@ -32,6 +32,8 @@ const Main = () => {
       <ScrollRestoration />
       {state === "loading" ? <Spinner /> : <Outlet />}
       <Footer />
+
+      {/* scroll to top button */}
       <button
         onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
         className={`fixed bottom-3 right-3 btn btn-primary btn-square btn-circle z-20 text-xl disabled:opacity-0 ${

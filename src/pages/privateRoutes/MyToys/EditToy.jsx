@@ -7,6 +7,7 @@ const EditToy = ({ selectedToy, setToys }) => {
   const [loading, setLoading] = useState(false);
   const ref = useRef();
 
+  // handle update toy action
   const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -65,6 +66,7 @@ const EditToy = ({ selectedToy, setToys }) => {
       setLoading(false);
     }
   };
+
   return (
     <>
       <input ref={ref} type="checkbox" id="editToy" className="modal-toggle" />

@@ -22,12 +22,14 @@ const AllToys = () => {
   const [firstLoad, setFirstLoad] = useState(true);
   const navigate = useNavigate();
 
+  // search action handler
   const handleSearch = (e) => {
     e.preventDefault();
     const searchText = e.target.search.value;
     setSearchString(searchText);
   };
 
+  // page change action
   const handlePageChange = (page) => {
     setLoading(true);
     fetch(
@@ -71,8 +73,10 @@ const AllToys = () => {
           <li>All Toys</li>
         </ul>
       </Breadcrumb>
+
       <div className="container mt-20 mb-16">
         <div className="my-6 bg-base-200 p-4 flex justify-center lg:justify-between gap-x-10 gap-y-6 flex-wrap">
+          {/* search box */}
           <form onSubmit={handleSearch} className="form-control">
             <div className="input-group">
               <input
@@ -100,6 +104,7 @@ const AllToys = () => {
             </div>
           </form>
 
+          {/* data showing limit controller */}
           <div className="flex items-center gap-3 w-fit">
             <label htmlFor="page-count">Paginate by</label>
             <select
@@ -115,6 +120,7 @@ const AllToys = () => {
             </select>
           </div>
 
+          {/* sorting */}
           <div className="flex items-center gap-3 w-fit">
             <label htmlFor="sorting">Sort by</label>
             <select
@@ -131,6 +137,7 @@ const AllToys = () => {
         </div>
 
         {loading ? (
+          // loading spinner
           <div className="flex flex-col items-center justify-center my-12">
             <h3 className="text-lg mb-2">Loading...</h3>
             <BarLoader
@@ -141,6 +148,7 @@ const AllToys = () => {
             />
           </div>
         ) : (
+          // all toys data table
           <div className="overflow-x-auto overflow-y-hidden">
             <table className="table w-full text-center">
               {/* head */}
@@ -192,6 +200,7 @@ const AllToys = () => {
                     <td className="font-semibold">${toy.price}</td>
                     <td>{toy.availableQty}</td>
                     <th>
+                      {/* view details button */}
                       <button
                         onClick={() => {
                           if (!user)
@@ -215,6 +224,8 @@ const AllToys = () => {
             </table>
           </div>
         )}
+
+        {/* pagination control */}
         {numberOfPage > 1 && (
           <div className="flex justify-center items-center gap-3 mt-6">
             <span>Page</span>

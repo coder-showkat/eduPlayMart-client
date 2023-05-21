@@ -8,12 +8,15 @@ const ShopByCategory = () => {
 
   return (
     <div className="container my-20 pt-8">
+      {/* heading */}
       <h1
         className="text-center text-5xl font-extrabold mb-12 font-nunito"
         data-aos="zoom-in"
       >
         Shop by Category
       </h1>
+
+      {/* subcategories */}
       <Tabs>
         <TabList className="tabs" data-aos="fade-left">
           <Tab className="text-lg tab tab-bordered">Toys & Games</Tab>
@@ -23,6 +26,7 @@ const ShopByCategory = () => {
           </Tab>
         </TabList>
 
+        {/* items by subcategory */}
         <TabPanel>
           <CategoryItems items={toysAndGames} />
         </TabPanel>

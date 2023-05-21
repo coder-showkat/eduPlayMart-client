@@ -16,6 +16,7 @@ const MyToys = () => {
   const [loading, setLoading] = useState(false);
   const [selectedToy, setSelectedToy] = useState({});
 
+  // handle sorting action
   const handleSorting = (sortBy) => {
     setLoading(true);
     const token = localStorage.getItem("token");
@@ -30,6 +31,7 @@ const MyToys = () => {
       .finally(() => setLoading(false));
   };
 
+  // handle delete action
   const deleteToy = async (id) => {
     Swal.fire({
       icon: "question",
@@ -88,8 +90,10 @@ const MyToys = () => {
           <li>My Toys</li>
         </ul>
       </Breadcrumb>
+
       <div className="container mt-20 mb-10">
         <div className="my-6 bg-base-200 p-4">
+          {/* sorting */}
           <div className="flex items-center gap-3 w-fit mx-auto">
             <label htmlFor="sorting">Sort by</label>
             <select
@@ -105,6 +109,7 @@ const MyToys = () => {
           </div>
         </div>
         {loading ? (
+          // loading spinner
           <div className="flex flex-col items-center justify-center my-12">
             <h3 className="text-lg mb-2">Loading...</h3>
             <BarLoader
@@ -115,6 +120,7 @@ const MyToys = () => {
             />
           </div>
         ) : toys.length > 0 ? (
+          // my toys data table
           <div className="overflow-x-auto w-full">
             <table className="table w-full text-center">
               {/* head */}
@@ -164,6 +170,7 @@ const MyToys = () => {
                     <td>${toy.price}</td>
                     <td>{toy.availableQty}</td>
                     <th>
+                      {/* view details button */}
                       <Link
                         to={`/toy/${toy._id}`}
                         className="btn btn-primary btn-xs"
@@ -172,6 +179,7 @@ const MyToys = () => {
                       </Link>
                     </th>
                     <th>
+                      {/* edit button */}
                       <label
                         htmlFor="editToy"
                         onClick={() => setSelectedToy(toy)}
@@ -182,6 +190,7 @@ const MyToys = () => {
                       </label>
                     </th>
                     <th>
+                      {/* delete button */}
                       <button
                         title="Delete"
                         onClick={() => deleteToy(toy._id)}
@@ -196,10 +205,12 @@ const MyToys = () => {
             </table>
           </div>
         ) : (
+          // if there have no items in my toys
           <div className="flex flex-col items-center justify-center gap-4 my-5">
             <p className="text-center text-error text-lg">
               You did not add any items to sell!
             </p>
+            {/* add a toy button */}
             <Link
               to="/seller/add-toy"
               className="btn btn-primary w-44 rounded-full"
