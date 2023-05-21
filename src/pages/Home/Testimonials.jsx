@@ -10,7 +10,7 @@ const Testimonials = () => {
     <div className="container my-20">
       {/* heading */}
       <h1
-        className="text-center text-5xl font-extrabold mb-12 font-nunito"
+        className="text-center text-4xl sm:text-5xl font-extrabold mb-12 font-nunito"
         data-aos="zoom-in"
       >
         What our customers say

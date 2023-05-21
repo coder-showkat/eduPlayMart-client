@@ -43,7 +43,7 @@ const ToyDetails = () => {
         </div>
         <div className="space-y-6">
           <h1
-            className="text-4xl font-extrabold font-nunito pb-2"
+            className="text-3xl sm:text-4xl font-extrabold font-nunito pb-2"
             data-aos="fade-left"
           >
             {name}

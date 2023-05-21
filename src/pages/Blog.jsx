@@ -33,7 +33,7 @@ const Blog = () => {
           data-aos="zoom-in"
         />
         <h1
-          className="text-3xl md:text-4xl font-extrabold font-nunito"
+          className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-nunito"
           data-aos="zoom-in"
         >
           {question}

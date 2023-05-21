@@ -7,7 +7,7 @@ const HowItWorks = () => {
     <div className="container my-24 pt-8">
       {/* heading */}
       <h1
-        className="text-center text-5xl font-extrabold mb-12 font-nunito"
+        className="text-center text-4xl sm:text-5xl font-extrabold mb-12 font-nunito"
         data-aos="zoom-in"
       >
         Here&rsquo;s how it works

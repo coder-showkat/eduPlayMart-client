@@ -9,7 +9,10 @@ import SingleCategoryItem from "../../Home/SingleCategoryItem";
 const RelatedToys = ({ relatedToys }) => {
   return (
     <div className="container mt-28 mb-8">
-      <h1 className="text-center text-5xl font-extrabold mb-12 font-nunito">
+      <h1
+        className="text-center text-4xl sm:text-5xl font-extrabold mb-12 font-nunito"
+        data-aos="zoom-in"
+      >
         Related Toys
       </h1>
 

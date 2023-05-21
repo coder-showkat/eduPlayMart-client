@@ -9,7 +9,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   } else {
     return (
       <div
-        className="max-w-3xl mx-auto px-8 py-12 bg-secondary/80 text-white rounded-3xl flex items-start justify-center gap-12 md:gap-8 flex-wrap text-7xl font-bold"
+        className="max-w-3xl mx-auto px-8 py-12 bg-secondary/80 text-white rounded-3xl flex items-start justify-center gap-12 md:gap-8 flex-wrap text-5xl md:text-7xl font-bold"
         data-aos="fade-right"
       >
         <div>
@@ -48,13 +48,13 @@ const Discount = () => {
       <div className="container text-center space-y-6">
         {/* heading */}
         <h1
-          className="text-5xl xl:text-6xl font-extrabold font-nunito"
+          className="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-nunito"
           data-aos="zoom-in"
         >
           15% Discount <br />
           On All Kid&#39;s Education Toys
         </h1>
-        <p className="text-3xl pb-6" data-aos="fade-left">
+        <p className="text-2xl sm:text-3xl pb-6" data-aos="fade-left">
           Offer Expires on
         </p>
 
