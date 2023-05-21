@@ -1,10 +1,12 @@
 # EduPlayMart
 
-EduPlayMart is an online platform that offers educational games and resources for children.
+EduPlayMart is an online toy marketplace that offers a wide range of educational toys for children.
 
 ## Features
 
-- Wide range of educational toys with different subcategories.
+- Browse and search for a variety of educational toys.
+- Detailed product information and images.
+- Secure user authentication using firebase.
 - User can add a product and also can update & delete his product.
 - Interactive and engaging learning experiences.
 - User-friendly interface.
