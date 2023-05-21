@@ -10,7 +10,7 @@ const Breadcrumb = ({ heading, children }) => {
       }}
     >
       <h1 className="font-nunito font-extrabold text-4xl mb-2">{heading}</h1>
-      <div className="breadcrumbs">{children}</div>
+      <div className="breadcrumbs max-w-xs">{children}</div>
     </div>
   );
 };

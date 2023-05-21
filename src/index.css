@@ -46,3 +46,7 @@ body {
 .swiper-pagination-bullet-active {
   @apply bg-secondary;
 }
+
+.breadcrumbs::-webkit-scrollbar {
+  display: none;
+}
