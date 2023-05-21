@@ -58,7 +58,7 @@ const Features = () => {
         {/* link to go to all toys page */}
         <Link
           to="/all-toys"
-          className="btn lg:btn-lg btn-primary normal-case rounded-full w-40 md:w-44 xl:w-48 font-extrabold"
+          className="btn lg:btn-lg btn-primary normal-case rounded-full w-44 lg:w-48 font-extrabold"
           data-aos="fade-left"
         >
           Get Started Now
