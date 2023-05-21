@@ -59,6 +59,7 @@ const MyToys = () => {
           });
           Swal.fire({
             icon: "success",
+            title: "Deleted!",
             iconColor: "#FEBF00",
             confirmButtonColor: "#FEBF00",
             text: "Item is deleted successfully!",

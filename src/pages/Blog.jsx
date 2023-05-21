@@ -26,11 +26,22 @@ const Blog = () => {
       </Breadcrumb>
 
       <div className="container my-12">
-        <img src={thumbnail} alt="" className="w-full rounded-md mb-5" />
-        <h1 className="text-3xl md:text-4xl font-extrabold font-nunito">
+        <img
+          src={thumbnail}
+          alt=""
+          className="w-full rounded-md mb-5"
+          data-aos="zoom-in"
+        />
+        <h1
+          className="text-3xl md:text-4xl font-extrabold font-nunito"
+          data-aos="zoom-in"
+        >
           {question}
         </h1>
-        <div className="flex items-center flex-wrap gap-4 my-6">
+        <div
+          className="flex items-center flex-wrap gap-4 my-6"
+          data-aos="fade-left"
+        >
           <div className="flex items-center">
             <MdPerson className="text-2xl rounded-full border p-0.5 mr-2" />
             <h3 className="opacity-75">By {user}</h3>
@@ -44,10 +55,15 @@ const Blog = () => {
         </div>
         <div className="space-y-3 md:text-lg mb-8">
           {answer.split("\n\n").map((p, i) => (
-            <p key={i}>{p}</p>
+            <p key={i} data-aos="fade-left">
+              {p}
+            </p>
           ))}
         </div>
-        <p className="flex items-center gap-3 font-extrabold font-nunito">
+        <p
+          className="flex items-center gap-3 font-extrabold font-nunito"
+          data-aos="zoom-in"
+        >
           Share with us:
           <FaFacebookF className="cursor-pointer hover:text-primary duration-300" />
           <FaTwitter className="cursor-pointer hover:text-primary duration-300" />

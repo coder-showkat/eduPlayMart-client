@@ -24,6 +24,7 @@ const Login = () => {
     if (result.message)
       Swal.fire({
         icon: "success",
+        title: "Success!",
         iconColor: "#FEBF00",
         confirmButtonColor: "#FEBF00",
         text: result.message,
@@ -36,6 +37,7 @@ const Login = () => {
     if (result.message)
       Swal.fire({
         icon: "success",
+        title: "Success!",
         iconColor: "#FEBF00",
         confirmButtonColor: "#FEBF00",
         text: result.message,
@@ -57,7 +59,10 @@ const Login = () => {
       </Breadcrumb>
 
       <div className="container my-16">
-        <div className="card w-full max-w-3xl mx-auto bg-base-200 my-10 rounded-none">
+        <div
+          className="card w-full max-w-3xl mx-auto bg-base-200 my-10 rounded-none"
+          data-aos="zoom-in"
+        >
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label" htmlFor="email">
@@ -82,7 +87,7 @@ const Login = () => {
               />
             </div>
             {error && <p className="pt-2 text-center text-error">{error}</p>}
-            <div className="form-control mt-6 mb-4">
+            <div className="form-control mt-6 mb-2">
               <button type="submit" className="btn btn-primary">
                 Login
               </button>
@@ -100,7 +105,7 @@ const Login = () => {
             <button
               onClick={handleGoogleLogin}
               type="button"
-              className="btn btn-outline mt-4 normal-case"
+              className="btn btn-outline mt-2 normal-case"
             >
               Continue with <FcGoogle className="text-xl ml-2" />
             </button>

@@ -34,6 +34,7 @@ const Register = () => {
       if (result.message)
         Swal.fire({
           icon: "success",
+          title: "Success!",
           iconColor: "#FEBF00",
           confirmButtonColor: "#FEBF00",
           text: result.message,
@@ -59,7 +60,10 @@ const Register = () => {
       </Breadcrumb>
 
       <div className="container my-16">
-        <div className="card w-full max-w-3xl mx-auto bg-base-200 my-10 rounded-none">
+        <div
+          className="card w-full max-w-3xl mx-auto bg-base-200 my-10 rounded-none"
+          data-aos="zoom-in"
+        >
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label" htmlFor="name">

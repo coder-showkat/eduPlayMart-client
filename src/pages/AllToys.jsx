@@ -197,6 +197,7 @@ const AllToys = () => {
                           if (!user)
                             Swal.fire({
                               icon: "info",
+                              title: "Login please!",
                               iconColor: "#FEBF00",
                               text: "You have to log in first to view details",
                               confirmButtonColor: "#FEBF00",

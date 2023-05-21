@@ -30,12 +30,19 @@ const Blogs = () => {
                 src={blog.thumbnail}
                 alt=""
                 className="w-full aspect-square object-cover object-center"
+                data-aos="zoom-in"
               />
               <div className="mb-4">
-                <h2 className="text-2xl font-extrabold font-nunito">
+                <h2
+                  className="text-2xl font-extrabold font-nunito"
+                  data-aos="fade-left"
+                >
                   {blog.question}
                 </h2>
-                <div className="flex items-center justify-between flex-wrap gap-2 my-4">
+                <div
+                  className="flex items-center justify-between flex-wrap gap-2 my-4"
+                  data-aos="fade-left"
+                >
                   <div className="flex items-center">
                     <MdPerson className="text-2xl rounded-full border p-0.5 mr-2" />
                     <h3 className="opacity-75">By {blog.user}</h3>
@@ -47,11 +54,12 @@ const Blogs = () => {
                     </h3>
                   </div>
                 </div>
-                <p>{blog.answer.substring(0, 100)}...</p>
+                <p data-aos="fade-left">{blog.answer.substring(0, 100)}...</p>
               </div>
               <Link
                 to={`/blog/${blog._id}`}
                 className="btn btn-primary rounded-full w-44 normal-case"
+                data-aos="fade-left"
               >
                 Read more
               </Link>

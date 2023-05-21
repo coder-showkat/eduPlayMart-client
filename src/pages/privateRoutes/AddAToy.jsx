@@ -67,6 +67,7 @@ const AddAToy = () => {
       if (json.error) throw new Error(json.error);
       Swal.fire({
         icon: "success",
+        title: "Success!",
         iconColor: "#FEBF00",
         confirmButtonColor: "#FEBF00",
         text: "Toy is added successfully!",
@@ -98,7 +99,10 @@ const AddAToy = () => {
       </Breadcrumb>
 
       <div className="container my-16">
-        <div className="card w-full max-w-3xl mx-auto bg-base-200 rounded-none">
+        <div
+          className="card w-full max-w-3xl mx-auto bg-base-200 rounded-none"
+          data-aos="zoom-in"
+        >
           <form onSubmit={handleAdd} className="card-body">
             <div className="form-control">
               <label className="label" htmlFor="image">
