@@ -1,38 +1,14 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { useLoaderData } from "react-router-dom";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import bg1 from "../../assets/images/slider1-bg.jpg";
-import bg2 from "../../assets/images/slider2-bg.jpg";
-import bg3 from "../../assets/images/slider3-bg.jpg";
-
-const bannerContent = [
-  {
-    id: 1,
-    subHeading: "Big fun for kid's!",
-    heading: "A World To Explore",
-    desc: "Active toys for smart and active kids. Bring fun and non-stop learning for your little ones.",
-    img: bg1,
-  },
-  {
-    id: 2,
-    subHeading: "Your wow! Store",
-    heading: "The Ultimate Toy Store",
-    desc: "Delivering smile with toys. Get your unbeatable fun and learning experience with our creative toys.",
-    img: bg2,
-  },
-  {
-    id: 3,
-    subHeading: "Fuel the imagination!",
-    heading: "Extraordinary Learning Toys",
-    desc: "Premium toy for the genuine start. The best place to your buy dream toys. We provide toys for all age kids.",
-    img: bg3,
-  },
-];
 
 const Banner = () => {
+  const { bannerContent } = useLoaderData();
+
   return (
     <Swiper
       modules={[Navigation, Autoplay, Pagination]}

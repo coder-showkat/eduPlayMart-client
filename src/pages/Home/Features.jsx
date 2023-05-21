@@ -1,30 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import bg from "../../assets/images/features_bg.webp";
 
-const features = [
-  {
-    id: 1,
-    icon: "https://i.ibb.co/4YS2B1Y/icon-4.png",
-    name: "Beautiful & well-designed",
-  },
-  {
-    id: 2,
-    icon: "https://i.ibb.co/DGw9mCk/icon-5.png",
-    name: "High durable toys",
-  },
-  {
-    id: 3,
-    icon: "https://i.ibb.co/7YtQWbz/icon-6.png",
-    name: "Recyclable materials",
-  },
-  {
-    id: 4,
-    icon: "https://i.ibb.co/876Y5GJ/icon-7.png",
-    name: "Safe & non-toxic",
-  },
-];
-
 const Features = () => {
+  const { features } = useLoaderData();
+
   return (
     <div
       className="h-[800px] bg-cover bg-center my-20 flex items-center justify-end"
