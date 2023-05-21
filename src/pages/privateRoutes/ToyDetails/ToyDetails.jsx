@@ -27,9 +27,7 @@ const ToyDetails = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link>{subCategory}</Link>
-          </li>
+          <li>{subCategory}</li>
           <li>{name}</li>
         </ul>
       </Breadcrumb>

@@ -84,9 +84,7 @@ const MyToys = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link>Seller</Link>
-          </li>
+          <li>Seller</li>
           <li>My Toys</li>
         </ul>
       </Breadcrumb>

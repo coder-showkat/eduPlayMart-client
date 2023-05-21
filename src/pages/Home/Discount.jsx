@@ -58,7 +58,7 @@ const Discount = () => {
           Offer Expires on
         </p>
 
-        <Countdown date={Date.now() + 31557600000} renderer={renderer} />
+        <Countdown date={1716230571342} renderer={renderer} />
 
         {/* link to go to all toys page */}
         <Link
