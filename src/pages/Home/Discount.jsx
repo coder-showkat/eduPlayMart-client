@@ -8,10 +8,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     return <p className="text-xl font-medium">Sorry! The Offer is expired!</p>;
   } else {
     return (
-      <div
-        className="max-w-3xl mx-auto px-8 py-12 bg-secondary/80 text-white rounded-3xl flex items-start justify-center gap-12 md:gap-8 flex-wrap text-5xl md:text-7xl font-bold"
-        data-aos="fade-right"
-      >
+      <div className="max-w-3xl mx-auto px-8 py-12 bg-secondary/80 text-white rounded-3xl flex items-start justify-center gap-12 md:gap-8 flex-wrap text-5xl md:text-7xl font-bold">
         <div>
           <h1>{days}</h1>
           <p className="text-lg font-normal">Days</p>
@@ -45,18 +42,13 @@ const Discount = () => {
         backgroundImage: `linear-gradient(to bottom, rgba(254, 191, 0, 0.8), rgba(254, 191, 0, 0.8)), url(${bg})`,
       }}
     >
-      <div className="container text-center space-y-6">
+      <div className="container text-center space-y-6" data-aos="zoom-out-up">
         {/* heading */}
-        <h1
-          className="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-nunito"
-          data-aos="zoom-in"
-        >
+        <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-nunito">
           15% Discount <br />
           On All Kid&#39;s Education Toys
         </h1>
-        <p className="text-2xl sm:text-3xl pb-6" data-aos="fade-left">
-          Offer Expires on
-        </p>
+        <p className="text-2xl sm:text-3xl pb-6">Offer Expires on</p>
 
         <Countdown date={1716230571342} renderer={renderer} />
 
@@ -64,7 +56,6 @@ const Discount = () => {
         <Link
           to="/all-toys"
           className="btn btn-lg btn-accent hover:bg-neutral hover:text-white normal-case rounded-full w-40 md:w-48 xl:w-52 font-extrabold md:!text-2xl"
-          data-aos="fade-left"
         >
           Shop Now
         </Link>
