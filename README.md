@@ -7,6 +7,7 @@ EduPlayMart is an online toy marketplace that offers a wide range of educational
 - Browse and search for a variety of educational toys.
 - Detailed product information and images.
 - Secure user authentication using firebase.
+- My Toys and Add A Toy route will be visible after login.
 - User can add a product and also can update & delete his product.
 - Interactive and engaging learning experiences.
 - User-friendly interface.
@@ -18,7 +19,7 @@ You can access a live demo of EduPlayMart at -> [EduPlayMart](https://eduplaymar
 
 ## Server Side Repository
 
-Click here for the server side repo -> https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-server-side-coder-showkat
+Click here for the server side repo -> https://github.com/showkatali-dev/eduPlayMart-server
 
 ## Technologies Used
 
