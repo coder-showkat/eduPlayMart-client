@@ -1,20 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiPencil } from "react-icons/hi";
 import { MdDeleteForever } from "react-icons/md";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
 import Breadcrumb from "../../../components/Breadcrumb";
+import Spinner from "../../../components/Spinner";
 import usePageTitle from "../../../hooks/usePageTitle";
 import EditToy from "./EditToy";
 
 const MyToys = () => {
   usePageTitle("My Toys");
-  const loaderData = useLoaderData();
-  const [toys, setToys] = useState(loaderData);
+  const [toys, setToys] = useState([]);
+  const [initialLoading, setInitialLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const [selectedToy, setSelectedToy] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const myToys = await fetch(
+          "https://eduplaymart-sam.vercel.app/api/seller/toys",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        ).then((res) => res.json());
+        setToys(myToys);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setInitialLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // handle sorting action
   const handleSorting = (sortBy) => {
@@ -76,6 +100,8 @@ const MyToys = () => {
       }
     });
   };
+
+  if (initialLoading) return <Spinner />;
 
   return (
     <>

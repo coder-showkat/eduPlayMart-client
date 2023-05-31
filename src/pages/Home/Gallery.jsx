@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useLoaderData } from "react-router-dom";
 import loadingSvg from "../../assets/spinner.svg";
 import { useLazyImage } from "../../hooks/useLazyImage";
 
@@ -18,9 +17,7 @@ const GalleryImage = ({ item }) => {
 };
 
 // gallery main component
-const Gallery = () => {
-  const { gallery } = useLoaderData();
-
+const Gallery = ({ gallery }) => {
   return (
     <div className="container my-20">
       {/* heading */}

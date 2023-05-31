@@ -1,8 +1,4 @@
-import { useLoaderData } from "react-router-dom";
-
-const HowItWorks = () => {
-  const { contents } = useLoaderData();
-
+const HowItWorks = ({ contents }) => {
   return (
     <div className="container my-24 pt-8">
       {/* heading */}

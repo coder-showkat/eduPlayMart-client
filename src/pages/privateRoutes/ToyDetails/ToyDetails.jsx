@@ -1,12 +1,44 @@
+import { useEffect, useState } from "react";
 import { FaFacebookF, FaGoogle, FaPinterest, FaTwitter } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Breadcrumb from "../../../components/Breadcrumb";
+import Spinner from "../../../components/Spinner";
 import usePageTitle from "../../../hooks/usePageTitle";
 import RelatedToys from "./RelatedToys";
 
 const ToyDetails = () => {
-  const { toyDetails, relatedToys } = useLoaderData();
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { toyDetails, relatedToys } = data;
+  const toyName = toyDetails ? toyDetails.name : "Loading...";
+  usePageTitle("Toy | " + toyName);
+
+  const params = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const baseUrl = "https://eduplaymart-sam.vercel.app/api/toys/";
+        const toyDetails = await fetch(baseUrl + params.id).then((res) =>
+          res.json()
+        );
+        const relatedToys = await fetch(
+          baseUrl + "related-toys/" + params.id
+        ).then((res) => res.json());
+        setData({ toyDetails, relatedToys });
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <Spinner />;
+
   const {
     image,
     name,
@@ -18,7 +50,6 @@ const ToyDetails = () => {
     availableQty,
     details,
   } = toyDetails;
-  usePageTitle("Toy | " + name);
 
   return (
     <div>

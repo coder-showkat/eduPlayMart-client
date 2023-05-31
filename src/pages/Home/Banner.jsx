@@ -1,14 +1,11 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { useLoaderData } from "react-router-dom";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Banner = () => {
-  const { bannerContent } = useLoaderData();
-
+const Banner = ({ bannerContent }) => {
   return (
     <Swiper
       modules={[Navigation, Autoplay, Pagination]}

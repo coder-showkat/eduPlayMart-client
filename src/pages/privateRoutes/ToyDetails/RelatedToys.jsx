@@ -41,7 +41,7 @@ const RelatedToys = ({ relatedToys }) => {
         }}
       >
         {relatedToys.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item._id}>
             <SingleCategoryItem item={item} />
           </SwiperSlide>
         ))}

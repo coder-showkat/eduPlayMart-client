@@ -1,11 +1,9 @@
-import { useLoaderData } from "react-router-dom";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Testimonials = () => {
-  const { testimonials } = useLoaderData();
+const Testimonials = ({ testimonials }) => {
   return (
     <div className="container my-20">
       {/* heading */}

@@ -1,11 +1,8 @@
-import { useLoaderData } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import CategoryItems from "./CategoryItems";
 
-const ShopByCategory = () => {
-  const { toysAndGames, puzzleToys, developmentToys } = useLoaderData();
-
+const ShopByCategory = ({ toysAndGames, puzzleToys, developmentToys }) => {
   return (
     <div className="container my-20 pt-8">
       {/* heading */}

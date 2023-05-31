@@ -1,9 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Main from "./Layouts/Main";
 import Spinner from "./components/Spinner";
-import { homeLoader } from "./loader/home.loader";
-import { myToysLoader } from "./loader/myToys.loader";
-import { toyDetailsLoader } from "./loader/toyDetails.loader";
 import AllToys from "./pages/AllToys";
 import Blog from "./pages/Blog";
 import Blogs from "./pages/Blogs";
@@ -25,7 +22,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: homeLoader,
       },
       {
         path: "/all-toys",
@@ -39,7 +35,6 @@ const router = createBrowserRouter([
             <ToyDetails />
           </PrivateRoute>
         ),
-        loader: toyDetailsLoader,
       },
       {
         path: "/login",
@@ -56,7 +51,6 @@ const router = createBrowserRouter([
             <MyToys />
           </PrivateRoute>
         ),
-        loader: myToysLoader,
       },
       {
         path: "/seller/add-toy",

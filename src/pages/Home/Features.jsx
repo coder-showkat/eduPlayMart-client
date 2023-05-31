@@ -1,9 +1,7 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import bg from "../../assets/images/features_bg.webp";
 
-const Features = () => {
-  const { features } = useLoaderData();
-
+const Features = ({ features }) => {
   return (
     <div
       className="h-[800px] bg-cover bg-center my-20 flex items-center justify-end"
